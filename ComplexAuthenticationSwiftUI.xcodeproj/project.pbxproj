@@ -14,6 +14,7 @@
 		9057A57028EB0D60006222A4 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9057A56F28EB0D60006222A4 /* LoginScreen.swift */; };
 		90C33F4828F5E3C80008715B /* SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C33F4728F5E3C80008715B /* SignupScreen.swift */; };
 		90C33F4C28F6A6AC0008715B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C33F4B28F6A6AC0008715B /* HomeScreen.swift */; };
+		90C33F4E28F6E9530008715B /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C33F4D28F6E9530008715B /* ForgotPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		9057A56F28EB0D60006222A4 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		90C33F4728F5E3C80008715B /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
 		90C33F4B28F6A6AC0008715B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		90C33F4D28F6E9530008715B /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				9057A56F28EB0D60006222A4 /* LoginScreen.swift */,
 				90C33F4728F5E3C80008715B /* SignupScreen.swift */,
 				90C33F4B28F6A6AC0008715B /* HomeScreen.swift */,
+				90C33F4D28F6E9530008715B /* ForgotPassword.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				9057A55E28EB0C9A006222A4 /* ComplexAuthenticationSwiftUIApp.swift in Sources */,
 				9057A57028EB0D60006222A4 /* LoginScreen.swift in Sources */,
 				90C33F4828F5E3C80008715B /* SignupScreen.swift in Sources */,
+				90C33F4E28F6E9530008715B /* ForgotPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

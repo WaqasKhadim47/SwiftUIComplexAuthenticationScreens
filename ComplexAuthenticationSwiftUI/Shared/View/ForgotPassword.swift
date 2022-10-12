@@ -1,22 +1,31 @@
 //
-//  HomeScreen.swift
+//  ForgotPassword.swift
 //  ComplexAuthenticationSwiftUI
 //
-//  Created by Waqas Khadim on 03/10/2022.
+//  Created by Waqas Khadim on 12/10/2022.
 //
 
 import SwiftUI
 
-struct LoginScreen: View {
+struct ForgotPassword: View {
     @State private var userName : String = ""
-    @State private var password : String = ""
-    @State private var circleheight : CGFloat = 0
-    var function: () -> Void
+    var backButton: () -> Void
     var body: some View {
-        
         VStack{
+            Button(action: backButton, label: {
+                Image(systemName: "arrow.left")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.black)
+                    .padding()
+                    .background(.white)
+                    .clipShape(Capsule())
+                // adding shodow
+                    .shadow(color: .blue.opacity(0.5), radius: 5, x: 0, y: 0)
+            })
+            .frame(maxWidth:.infinity, alignment: .leading)
+            .padding(.bottom, 40)
             // title
-            Text("Sign In")
+            Text("Forgot Password")
                 .font(.title)
                 .fontWeight(.bold)
                 .kerning(1.9)
@@ -38,35 +47,6 @@ struct LoginScreen: View {
             })
             .padding(.top, 25)
             
-            // password field here
-            
-            VStack(alignment: .leading, spacing: 10, content: {
-                Text("Password")
-                    .fontWeight(.bold)
-                    .foregroundColor(.gray)
-                
-                // text field
-                
-                SecureField("*******", text: $password)
-                
-                // Divider
-                Divider()
-            })
-            .padding(.top, 25)
-            
-            
-            // forgot password button
-            
-            Button(action: function, label: {
-                Text("Forgot Password?")
-                    .fontWeight(.bold)
-                    .foregroundColor(.gray)
-            })
-            .frame( maxWidth: .infinity,  alignment: .trailing)
-            .padding(.top, 15)
-            
-            // next button
-            
             Button(action: {}, label: {
                 Image(systemName: "arrow.right")
                     .font(.system(size: 24, weight: .bold))
@@ -77,16 +57,10 @@ struct LoginScreen: View {
                 // adding shodow
                     .shadow(color: .blue.opacity(0.5), radius: 5, x: 0, y: 0)
             })
-            .frame(maxWidth:.infinity, alignment: .leading)
+            .frame(maxWidth:.infinity, alignment: .trailing)
             .padding(.top, 10)
-            
-            
-            
-            
         }.padding()
     }
 }
 
 
-
- 

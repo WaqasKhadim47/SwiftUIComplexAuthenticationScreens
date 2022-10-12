@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    @State var showLogin = true
+    @State var showLogin = 0
     @State private var circleheight : CGFloat = 0
     var body: some View {
         
@@ -51,12 +51,23 @@ struct HomeScreen: View {
                 
                 ZStack{
                     
-                    if showLogin {
-                        LoginScreen()
+                    if showLogin == 0 {
+                        LoginScreen(function: {
+                            withAnimation{
+                                showLogin = 2
+                            }
+                        })
                             .transition(.move(edge: .trailing))
                     }
-                    else {
+                    else if showLogin == 1 {
                         SignupScreen()
+                            .transition(.move(edge: .leading))
+                    } else {
+                        ForgotPassword(backButton: {
+                            withAnimation{
+                                showLogin = 0
+                            }
+                        })
                             .transition(.move(edge: .leading))
                     }
                     
@@ -65,21 +76,42 @@ struct HomeScreen: View {
                     .padding(.top, -circleheight / 1.5)
                     .frame(maxHeight: .infinity, alignment: .top)
             }.overlay(
-                HStack{
-                    Text(showLogin ? "You don't have an account?" : "Already have an account?" )
-                        .fontWeight(.regular)
-                        .foregroundColor(.black)
-                    Button(action: {
-                        withAnimation{
-                            showLogin.toggle()
+                ZStack{
+                    if showLogin == 0 {
+                        HStack(){
+                            Text("You don't have an account?"  )
+                                .fontWeight(.regular)
+                                .foregroundColor(.black)
+                            Button(action: {
+                                withAnimation{
+                                    showLogin = 1
+                                }
+                                
+                            }, label: {
+                                Text("Signup")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.red)
+                            })
                         }
-                        
-                    }, label: {
-                        Text(showLogin ? "Signup" : "Sign in")
-                            .fontWeight(.bold)
-                            .foregroundColor(.red)
-                    })
-                }, alignment: .bottom
+                    } else if showLogin == 1 {
+                        HStack(){
+                            Text("Already have an account?" )
+                                .fontWeight(.regular)
+                                .foregroundColor(.black)
+                            Button(action: {
+                                withAnimation{
+                                    showLogin = 0
+                                }
+                                
+                            }, label: {
+                                Text("Sign in")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.red)
+                            })
+                        }
+
+                    }
+                },alignment: .bottom
             ).background(
             
                     HStack{
