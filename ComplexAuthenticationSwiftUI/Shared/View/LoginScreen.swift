@@ -67,7 +67,9 @@ struct LoginScreen: View {
             
             // next button
             
-            Button(action: {}, label: {
+            NavigationLink(destination: {
+                Home()
+            }, label: {
                 Image(systemName: "arrow.right")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.white)
